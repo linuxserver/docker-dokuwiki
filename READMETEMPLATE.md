@@ -26,7 +26,7 @@ docker create \
   --name=dokuwiki \
   -v <path to data>:/config \
   -e PGID=<gid> -e PUID=<uid>  \
-  -p 80:80 \
+  -p 443:443 \
   linuserver/dokuwiki
 ```
 
@@ -39,7 +39,7 @@ http://192.168.x.x:8080 would show you what's running INSIDE the container on po
 
 
 
-* `-p 80` - the port(s)
+* `-p 443` - the port(s)
 * `-v /config` - where dokuwiki should store its files.
 * `-e PGID` for GroupID - see below for explanation
 * `-e PUID` for UserID - see below for explanation
@@ -59,7 +59,7 @@ In this instance `PUID=1001` and `PGID=1001`. To find yours use `id user` as bel
 
 ## Setting up the application
 
-Find the webui at `<your-ip>:80`, for more info see [Dokuwiki][appurl]
+Find the webui at `https://<your-ip>:443`, for more info see [Dokuwiki][appurl]
 
 ## Info
 
