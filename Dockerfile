@@ -10,11 +10,17 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 RUN \
  apk add --no-cache \
 	curl \
+	tar && \
+
+ apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/main \
+	libwebp && \
+ apk add --no-cache \
+	--repository http://nl.alpinelinux.org/alpine/edge/community \
 	php7-bz2 \
 	php7-gd \
 	php7-xml \
-	php7-zip \
-	tar
+	php7-zip
 
 # copy local files
 COPY root/ /
