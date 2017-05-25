@@ -10,11 +10,11 @@ LABEL build_version="Linuxserver.io version:- ${VERSION} Build-date:- ${BUILD_DA
 RUN \
  apk add --no-cache \
 	curl \
-	tar \
 	php7-bz2 \
 	php7-gd \
 	php7-xml \
-	php7-zip
+	php7-zip \
+	tar
 
 # copy local files
 COPY root/ /
