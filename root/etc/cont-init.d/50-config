@@ -43,7 +43,7 @@ if [[ -f /config/dokuwiki/conf/local.php ]]; then
         sed -i -e 's/#location/location/g' \
             /config/nginx/site-confs/default && \
         cp /defaults/.htaccess /app/dokuwiki/.htaccess
-    if [[ ! -z ${APP_URL} ]]; then
+    if [[ -n ${APP_URL} ]]; then
         sed -i "2i\RewriteBase ${APP_URL}" \
             /app/dokuwiki/.htaccess
     fi
