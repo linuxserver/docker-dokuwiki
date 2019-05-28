@@ -22,11 +22,11 @@ pipeline {
     CI='true'
     CI_WEB='true'
     CI_PORT='80'
-    CI_SSL='true'
+    CI_SSL='false'
     CI_DELAY='120'
     CI_DOCKERENV='TZ=US/Pacific'
     CI_AUTH=''
-    CI_WEBPATH='/install.php'
+    CI_WEBPATH=''
   }
   stages {
     // Setup all the basic environment variables needed for the build
