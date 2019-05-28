@@ -2,7 +2,8 @@
 
 # jenkins variables
 project_name: docker-dokuwiki
-external_type: os
+external_type: na
+custom_version_command: "docker run --rm alpine:3.9 sh -c 'apk add xmlstarlet > /dev/null 2>&1 && wget https://download.dokuwiki.org/rss -O - 2>/dev/null | xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | cut -d'-' -f2-4 | cut -d'.' -f1'"
 release_type: stable
 release_tag: latest
 ls_branch: master

@@ -32,7 +32,9 @@ param_ports:
   - { external_port: "80", internal_port: "80", port_desc: "Application HTTP Port" }
 
 # optional container parameters
-opt_param_usage_include_env: false
+opt_param_usage_include_env: true
+opt_param_env_vars:
+  - { env_var: "APP_URL", env_value: "/dokuwiki", desc: "Specify an APP_URL to append to your root location, helpful for subfolder reverse proxy setups.  Does not take effect until after first restart following setup." }
 opt_param_usage_include_vols: false
 opt_param_usage_include_ports: true
 opt_param_ports:
@@ -43,7 +45,7 @@ optional_block_1: false
  # application setup block
 app_setup_block_enabled: true
 app_setup_block: |
-  Upon first install go to `http://$IP:$PORT/install.php` once you have completed the setup, you will find the webui at `http://$IP:$PORT/`, for more info see [{{ project_name|capitalize }}]({{ project_url }})
+  Upon first install go to `http://$IP:$PORT/install.php` once you have completed the setup, restart the container, login as admin and set "Use nice URLs" in the `admin/Configuration Settings` panel to `.htaccess` and tick `Use slash as namespace separator in URLs` to enable [nice URLs](https://www.dokuwiki.org/rewrite) you will find the webui at `http://$IP:$PORT/`, for more info see [{{ project_name|capitalize }}]({{ project_url }})
 app_setup_nginx_reverse_proxy_snippet: false
 app_setup_nginx_reverse_proxy_block: ""
 # changelog

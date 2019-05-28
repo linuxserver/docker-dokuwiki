@@ -13,24 +13,26 @@ server {
     client_body_buffer_size 128k;
 
     root /app/dokuwiki;
+    index doku.php;
 
-    location / {
-        index doku.php;
-        try_files $uri $uri/ @dokuwiki;
+    #Remember to comment the below out when you're installing, and uncomment it when done.
+    #location ~ /(conf/|bin/|inc/|install.php) { deny all; }
+ 
+    #Support for X-Accel-Redirect
+    location ~ ^/data/ { internal ; }
+ 
+    location ~ ^/lib.*\.(js|css|gif|png|ico|jpg|jpeg)$ {
+        expires 365d;
     }
-
-    location ~ ^/lib.*\.(gif|png|ico|jpg)$ {
-        expires 30d;
-    }
-
-    location ^~ /conf/ { return 403; }
-    location ^~ /data/ { return 403; }
-
+ 
+    location / { try_files $uri $uri/ @dokuwiki; }
+ 
     location @dokuwiki {
+        # rewrites "doku.php/" out of the URLs if you set the userwrite setting to .htaccess in dokuwiki config page
         rewrite ^/_media/(.*) /lib/exe/fetch.php?media=$1 last;
         rewrite ^/_detail/(.*) /lib/exe/detail.php?media=$1 last;
         rewrite ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last;
-        rewrite ^/(.*) /doku.php?id=$1 last;
+        rewrite ^/(.*) /doku.php?id=$1&$args last;
     }
 
     location ~ \.php$ {
