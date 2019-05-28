@@ -1,52 +1,45 @@
 server {
-    listen 80;
-#    listen [::]:80;
-    server_name _;
-    return 301 https://$server_name$request_uri;
-}
- 
-server {
-#    listen [::]:443 ssl;
+    listen 80 default_server;
+
     listen 443 ssl;
- 
-    server_name _;
-    ssl_certificate /config/keys/cert.crt;
-    ssl_certificate_key /config/keys/cert.key;
-    
-   # Maximum file upload size is 4MB - change accordingly if needed
+
+	server_name _;
+
+	ssl_certificate /config/keys/cert.crt;
+	ssl_certificate_key /config/keys/cert.key;
+
+    # Maximum file upload size is 4MB - change accordingly if needed
     client_max_body_size 4M;
     client_body_buffer_size 128k;
- 
-    root /config/www/dokuwiki;
-    index doku.php;
-    
-    #Remember to comment the below out when you're installing, and uncomment it when done.
-    location ~ /(data/|conf/|bin/|inc/|install.php) { deny all; }
 
-#   Uncomment this prevents images being displayed ! 
-#    location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
-#        expires 31536000s;
-#        add_header Pragma "public";
-#        add_header Cache-Control "max-age=31536000, public, must-revalidate, proxy-revalidate";
-#        log_not_found off;
-#    }
- 
-    location / { try_files $uri $uri/ @dokuwiki; }
- 
+    root /app/dokuwiki;
+
+    location / {
+        index doku.php;
+        try_files $uri $uri/ @dokuwiki;
+    }
+
+    location ~ ^/lib.*\.(gif|png|ico|jpg)$ {
+        expires 30d;
+    }
+
+    location ^~ /conf/ { return 403; }
+    location ^~ /data/ { return 403; }
+
     location @dokuwiki {
         rewrite ^/_media/(.*) /lib/exe/fetch.php?media=$1 last;
         rewrite ^/_detail/(.*) /lib/exe/detail.php?media=$1 last;
         rewrite ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last;
-        rewrite ^/(.*) /doku.php?id=$1&$args last;
+        rewrite ^/(.*) /doku.php?id=$1 last;
     }
- 
+
     location ~ \.php$ {
-        fastcgi_split_path_info ^(.+\.php)(/.+)$;
-        # With php5-cgi alone:
-        fastcgi_pass 127.0.0.1:9000;
-        # With php5-fpm:
-        #fastcgi_pass unix:/var/run/php5-fpm.sock;
-        fastcgi_index index.php;
-        include /etc/nginx/fastcgi_params;
-        }
+		fastcgi_split_path_info ^(.+\.php)(/.+)$;
+		# With php5-cgi alone:
+		fastcgi_pass 127.0.0.1:9000;
+		# With php5-fpm:
+		#fastcgi_pass unix:/var/run/php5-fpm.sock;
+		fastcgi_index index.php;
+		include /etc/nginx/fastcgi_params;
+    }
 }

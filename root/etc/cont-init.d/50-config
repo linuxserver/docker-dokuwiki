@@ -1,0 +1,52 @@
+#!/usr/bin/with-contenv bash
+
+USER_DIRECTORY=(\
+    "conf" \
+    "data/attic" \
+    "data/media" \
+    "data/media_attic" \
+    "data/media_meta" \
+    "data/meta" \
+    "data/pages" \
+    "lib/plugins" \
+    "lib/tpl" \
+    )
+
+## Make data directories
+[[ ! -d /config/dokuwiki/data ]]
+    mkdir -p /config/dokuwiki/data
+
+[[ ! -d /config/dokuwiki/lib/ ]]
+    mkdir -p /config/dokuwiki/lib/
+
+## Move user folders to persistent storage
+for i in ${USER_DIRECTORY[@]}; do 
+    [[ ! -d /config/dokuwiki/${i} ]] && \
+        mv /app/dokuwiki/${i} /config/dokuwiki/${i}/
+done
+
+## Remove user folders
+for i in ${USER_DIRECTORY[@]}; do 
+[[  -d /app/dokuwiki/${i} ]] && \
+    rm -rf /app/dokuwiki/${i}
+done
+
+## Make Symlinks
+for i in ${USER_DIRECTORY[@]}; do 
+[[ ! -L /app/dokuwiki/${i} ]] && \
+    ln -s /config/dokuwiki/${i} /app/dokuwiki/${i}
+done
+
+## Remove install.php once setup
+if [[ -f /config/dokuwiki/conf/local.php ]]; then
+    rm /app/dokuwiki/install.php && \
+    echo "Existing install found - removing install.php"
+else
+    echo "Go to http://IP-ADDRESS:PORT/install.php to configure your install"
+fi
+
+# permissions
+ chown -R abc:abc \
+	/app/dokuwiki \
+    /config
+
