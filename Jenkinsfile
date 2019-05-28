@@ -26,7 +26,7 @@ pipeline {
     CI_DELAY='120'
     CI_DOCKERENV='TZ=US/Pacific'
     CI_AUTH=''
-    CI_WEBPATH=''
+    CI_WEBPATH='/install.php'
   }
   stages {
     // Setup all the basic environment variables needed for the build
