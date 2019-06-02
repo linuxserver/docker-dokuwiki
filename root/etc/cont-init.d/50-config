@@ -42,11 +42,6 @@ if [[ -f /config/dokuwiki/conf/local.php ]]; then
         rm /app/dokuwiki/install.php && \
         sed -i -e 's/#location/location/g' \
             /config/nginx/site-confs/default && \
-        cp /defaults/.htaccess /app/dokuwiki/.htaccess
-    if [[ -n "${APP_URL}" ]]; then
-        sed -i "2i\RewriteBase "${APP_URL}"" \
-            /app/dokuwiki/.htaccess
-    fi
     echo "Existing install found install.php not available"
 else
     echo "Go to http://IP-ADDRESS:PORT/install.php to configure your install then restart your container when finished to remove install.php"
