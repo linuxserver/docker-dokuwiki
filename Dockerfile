@@ -21,12 +21,12 @@ RUN \
 	php7-xml \
 	php7-zip && \
  echo "**** install dokuwiki ****" && \
-  if [ -z ${DOKUWIKI_RELEASE+x} ]; then \
+ if [ -z ${DOKUWIKI_RELEASE+x} ]; then \
 	DOKUWIKI_RELEASE=$(wget https://download.dokuwiki.org/rss -O - 2>/dev/null | \
-	    xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | \
+		xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | \
 		cut -d'-' -f2-4 | cut -d'.' -f1 ); \
-  fi && \
-  curl -o \
+ fi && \
+ curl -o \
  /tmp/dokuwiki.tar.gz -L \
 	"https://github.com/splitbrain/dokuwiki/archive/release_stable_${DOKUWIKI_RELEASE}.tar.gz" && \
  mkdir -p \
