@@ -34,7 +34,7 @@ libacl-2.2.52-r5
 libattr-2.4.47-r7
 libblkid-2.33-r0
 libbsd-0.8.6-r2
-libbz2-1.0.6-r6
+libbz2-1.0.6-r7
 libc-utils-0.7.1-r0
 libcroco-0.6.12-r1
 libcrypto1.1-1.1.1b-r1
