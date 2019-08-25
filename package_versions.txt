@@ -11,7 +11,7 @@ ca-certificates-20190108-r0
 ca-certificates-cacert-20190108-r0
 cairo-1.16.0-r1
 coreutils-8.30-r0
-cups-libs-2.2.10-r0
+cups-libs-2.2.12-r0
 curl-7.64.0-r2
 dbus-libs-1.10.28-r0
 expat-2.2.6-r0
