@@ -12,14 +12,14 @@ ca-certificates-cacert-20190108-r0
 cairo-1.16.0-r1
 coreutils-8.30-r0
 cups-libs-2.2.12-r0
-curl-7.64.0-r2
+curl-7.64.0-r3
 dbus-libs-1.10.28-r0
 expat-2.2.6-r0
 fontconfig-2.13.1-r0
 freetype-2.9.1-r2
 fribidi-1.0.5-r0
 gdk-pixbuf-2.36.11-r2
-ghostscript-9.26-r3
+ghostscript-9.26-r4
 git-2.20.1-r0
 glib-2.58.1-r3
 gmp-6.1.2-r1
