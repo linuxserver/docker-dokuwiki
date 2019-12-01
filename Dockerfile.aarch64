@@ -18,6 +18,7 @@ RUN \
 	imagemagick \
 	php7-bz2 \
 	php7-gd \
+	php7-ldap \
 	php7-xml \
 	php7-zip && \
  echo "**** install dokuwiki ****" && \
