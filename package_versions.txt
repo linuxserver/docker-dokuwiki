@@ -54,6 +54,7 @@ libltdl-2.4.6-r7
 libmagic-5.37-r1
 libmount-2.34-r1
 libpng-1.6.37-r1
+libproc-3.3.16-r0
 libressl3.0-libcrypto-3.0.2-r0
 libressl3.0-libssl-3.0.2-r0
 librsvg-2.46.4-r0
@@ -110,6 +111,7 @@ php7-zip-7.3.18-r0
 pixman-0.38.4-r0
 pkgconf-1.6.3-r0
 popt-1.16-r7
+procps-3.3.16-r0
 readline-8.0.1-r0
 scanelf-1.2.4-r0
 shadow-4.7-r1
