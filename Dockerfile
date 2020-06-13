@@ -20,6 +20,7 @@ RUN \
 	php7-gd \
 	php7-ldap \
 	php7-xml \
+	php7-ctype \
 	php7-zip && \
  echo "**** install dokuwiki ****" && \
  if [ -z ${DOKUWIKI_RELEASE+x} ]; then \
