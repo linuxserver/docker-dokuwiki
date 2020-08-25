@@ -12,6 +12,11 @@ USER_DIRECTORY=(\
     "lib/tpl" \
     )
 
+CORE_DIR=(\
+    "inc" \
+    "vendor" \
+    )
+
 ## Make data directories
 [[ ! -d /config/dokuwiki/data ]]
     mkdir -p /config/dokuwiki/data
@@ -36,6 +41,15 @@ for i in "${USER_DIRECTORY[@]}"; do
 [[ ! -L /app/dokuwiki/"${i}" ]] && \
     ln -s /config/dokuwiki/"${i}" /app/dokuwiki/"${i}"
 done
+
+## Make Symlinks from /app/dokuwiki to /config/dokuwiki
+## This is to make sure plugins that include files
+## from CORE_DIR work properly
+for i in "${CORE_DIR[@]}"; do
+[[ ! -L /config/dokuwiki/"${i}" ]] && \
+    ln -s /app/dokuwiki/"${i}" /config/dokuwiki/"${i}"
+done
+
 
 ## Remove install.php once setup & enable pretty urls to work after setting .htaccess method in admin panel.
 if [[ -f /config/dokuwiki/conf/local.php ]]; then
