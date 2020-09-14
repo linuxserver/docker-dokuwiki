@@ -17,6 +17,7 @@ RUN \
 	curl \
 	imagemagick \
 	php7-bz2 \
+	php7-ctype \
 	php7-gd \
 	php7-ldap \
 	php7-xml \
