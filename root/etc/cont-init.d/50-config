@@ -12,6 +12,11 @@ USER_DIRECTORY=(\
     "lib/tpl"
     )
 
+CORE_DIR=(\
+    "inc" \
+    "vendor" \
+    )
+
 ## Make data directories
 [[ ! -d /config/dokuwiki/data ]]
     mkdir -p /config/dokuwiki/data
@@ -36,6 +41,14 @@ done
 for i in "${USER_DIRECTORY[@]}"; do 
 [[ ! -L /app/dokuwiki/"${i}" ]] && \
     ln -s /config/dokuwiki/"${i}" /app/dokuwiki/"${i}"
+done
+
+## Make Symlinks from /app/dokuwiki to /config/dokuwiki
+## This is to make sure plugins that include files
+## from CORE_DIR work properly
+for i in "${CORE_DIR[@]}"; do
+[[ ! -L /config/dokuwiki/"${i}" ]] && \
+    ln -s /app/dokuwiki/"${i}" /config/dokuwiki/"${i}"
 done
 
 ## Bump php upload max filesize and post max size to 100MB by default
