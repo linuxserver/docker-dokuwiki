@@ -218,7 +218,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **14.09.20:** - Rebase to alpine 3.12. Add php7-ctype, php7-curl, php7-pdo_mysql, php7-pdo_pgsql, php7-pecl-imagick and php7-iconv. Bump upload max filesize and post max size to 100MB. Remove deprecated APP_URL env var.
+* **14.09.20:** - Rebase to alpine 3.12. Add php7-ctype, php7-curl, php7-pdo_mysql, php7-pdo_pgsql, php7-pecl-imagick and php7-iconv. Bump upload max filesize and post max size to 100MB. Remove deprecated APP_URL env var. Fix breaking addons.
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **01.12.19:** - Add php7-ldap package to support LDAP authentication.
 * **28.05.19:** - Initial Release.
