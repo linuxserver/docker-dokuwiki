@@ -1,4 +1,4 @@
-FROM lsiobase/nginx:3.11
+FROM lsiobase/nginx:3.12
 
 # set version label
 ARG BUILD_DATE
@@ -18,8 +18,13 @@ RUN \
 	imagemagick \
 	php7-bz2 \
 	php7-ctype \
+	php7-curl \
 	php7-gd \
+	php7-iconv \
 	php7-ldap \
+	php7-pecl-imagick \
+	php7-pdo_mysql \
+	php7-pdo_pgsql \
 	php7-xml \
 	php7-zip && \
  echo "**** install dokuwiki ****" && \
