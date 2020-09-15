@@ -9,7 +9,7 @@ USER_DIRECTORY=(\
     "data/meta" \
     "data/pages" \
     "lib/plugins" \
-    "lib/tpl" \
+    "lib/tpl"
     )
 
 CORE_DIR=(\
@@ -27,12 +27,13 @@ CORE_DIR=(\
 ## Move user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do 
     [[ ! -d /config/dokuwiki/${i} ]] && \
+        [[ -d /app/dokuwiki/"${i}" ]] && \
         mv /app/dokuwiki/"${i}" /config/dokuwiki/"${i}"/
 done
 
 ## Remove user folders
 for i in "${USER_DIRECTORY[@]}"; do 
-[[  -d /app/dokuwiki/"${i}" ]] && \
+[[ -d /app/dokuwiki/"${i}" ]] && \
     rm -rf /app/dokuwiki/"${i}"
 done
 
@@ -50,10 +51,13 @@ for i in "${CORE_DIR[@]}"; do
     ln -s /app/dokuwiki/"${i}" /config/dokuwiki/"${i}"
 done
 
+## Bump php upload max filesize and post max size to 100MB by default
+grep -qxF 'upload_max_filesize' /config/php/php-local.ini || echo 'upload_max_filesize = 100MB' >> /config/php/php-local.ini
+grep -qxF 'post_max_size' /config/php/php-local.ini || echo 'post_max_size = 100MB' >> /config/php/php-local.ini
 
 ## Remove install.php once setup & enable pretty urls to work after setting .htaccess method in admin panel.
 if [[ -f /config/dokuwiki/conf/local.php ]]; then
-    rm /app/dokuwiki/install.php && \
+    rm -rf /app/dokuwiki/install.php && \
     sed -i -e 's/#location/location/g' \
         /config/nginx/site-confs/default && \
     echo "Existing install found install.php not available"
