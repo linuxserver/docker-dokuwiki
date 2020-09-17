@@ -67,10 +67,9 @@ docker create \
   -e PUID=1000 \
   -e PGID=1000 \
   -e TZ=Europe/London \
-  -e APP_URL=/dokuwiki `#optional` \
   -p 80:80 \
   -p 443:443 `#optional` \
-  -v </path/to/appdata/config>:/config \
+  -v /path/to/appdata/config:/config \
   --restart unless-stopped \
   linuxserver/dokuwiki
 ```
@@ -91,9 +90,8 @@ services:
       - PUID=1000
       - PGID=1000
       - TZ=Europe/London
-      - APP_URL=/dokuwiki #optional
     volumes:
-      - </path/to/appdata/config>:/config
+      - /path/to/appdata/config:/config
     ports:
       - 80:80
       - 443:443 #optional
@@ -111,7 +109,6 @@ Container images are configured using parameters passed at runtime (such as thos
 | `-e PUID=1000` | for UserID - see below for explanation |
 | `-e PGID=1000` | for GroupID - see below for explanation |
 | `-e TZ=Europe/London` | Specify a timezone to use EG Europe/London. |
-| `-e APP_URL=/dokuwiki` | Specify an APP_URL to append to your root location, helpful for subfolder reverse proxy setups.  Does not take effect until after first restart following setup. |
 | `-v /config` | Configuration files. |
 
 ## Environment variables from files (Docker secrets)
@@ -221,6 +218,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **14.09.20:** - Rebase to alpine 3.12. Add php7-ctype, php7-curl, php7-pdo_mysql, php7-pdo_pgsql, php7-pecl-imagick and php7-iconv. Bump upload max filesize and post max size to 100MB. Remove deprecated APP_URL env var. Fix breaking addons.
 * **19.12.19:** - Rebasing to alpine 3.11.
 * **01.12.19:** - Add php7-ldap package to support LDAP authentication.
 * **28.05.19:** - Initial Release.

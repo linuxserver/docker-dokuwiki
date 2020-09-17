@@ -8,8 +8,8 @@ server {
 	ssl_certificate /config/keys/cert.crt;
 	ssl_certificate_key /config/keys/cert.key;
 
-    # Maximum file upload size is 4MB - change accordingly if needed
-    client_max_body_size 4M;
+    # Maximum file upload size is 100MB - change accordingly if needed
+    client_max_body_size 100M;
     client_body_buffer_size 128k;
 
     root /app/dokuwiki;
