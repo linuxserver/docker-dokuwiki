@@ -40,6 +40,7 @@ app_setup_block: |
   Upon first install go to `http://$IP:$PORT/install.php` once you have completed the setup, restart the container, login as admin and set "Use nice URLs" in the `admin/Configuration Settings` panel to `.htaccess` and tick `Use slash as namespace separator in URLs` to enable [nice URLs](https://www.dokuwiki.org/rewrite) you will find the webui at `http://$IP:$PORT/`, for more info see [{{ project_name|capitalize }}]({{ project_url }})
 # changelog
 changelogs:
+  - { date: "28.09.20:", desc: "Add php7-pdo_sqlite and php7-sqlite3." }
   - { date: "23.09.20:", desc: "Fix php-local.ini bug introduced in the prior PR." }
   - { date: "14.09.20:", desc: "Rebase to alpine 3.12. Add php7-ctype, php7-curl, php7-pdo_mysql, php7-pdo_pgsql, php7-pecl-imagick and php7-iconv. Bump upload max filesize and post max size to 100MB. Remove deprecated APP_URL env var. Fix breaking addons."}
   - { date: "19.12.19:", desc: "Rebasing to alpine 3.11." }

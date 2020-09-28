@@ -25,6 +25,8 @@ RUN \
 	php7-pecl-imagick \
 	php7-pdo_mysql \
 	php7-pdo_pgsql \
+	php7-pdo_sqlite \
+	php7-sqlite3 \
 	php7-xml \
 	php7-zip && \
  echo "**** install dokuwiki ****" && \
