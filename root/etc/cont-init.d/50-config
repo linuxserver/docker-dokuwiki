@@ -3,6 +3,7 @@
 USER_DIRECTORY=(\
     "conf" \
     "data/attic" \
+    "data/index" \
     "data/media" \
     "data/media_attic" \
     "data/media_meta" \
