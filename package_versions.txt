@@ -23,7 +23,7 @@ fontconfig-2.13.1-r3
 freetype-2.10.4-r1
 fribidi-1.0.10-r0
 gdbm-1.19-r0
-gdk-pixbuf-2.42.2-r0
+gdk-pixbuf-2.42.4-r0
 ghostscript-9.53.3-r0
 git-2.30.2-r0
 glib-2.66.7-r1
@@ -92,7 +92,7 @@ nettle-3.7-r0
 nghttp2-libs-1.42.0-r1
 nginx-1.18.0-r13
 oniguruma-6.9.6-r0
-openssl-1.1.1j-r0
+openssl-1.1.1k-r0
 p11-kit-0.23.22-r0
 pango-1.48.2-r0
 pcre-8.44-r0
