@@ -15,8 +15,7 @@ server {
     root /app/dokuwiki;
     index doku.php;
 
-    #Remember to comment the below out when you're installing, and uncomment it when done.
-    #location ~ /(conf/|bin/|inc/|install.php) { deny all; }
+    location ~ /(conf/|bin/|inc/|vendor/) { deny all; }
  
     #Support for X-Accel-Redirect
     location ~ ^/data/ { internal ; }
