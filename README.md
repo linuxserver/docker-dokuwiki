@@ -222,6 +222,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **21.02.21:** - Store search index outside of container, set absolute (default) path for `savedir`.
 * **23.01.21:** - Rebasing to alpine 3.13.
 * **28.09.20:** - Add php7-pdo_sqlite and php7-sqlite3.
 * **23.09.20:** - Fix php-local.ini bug introduced in the prior PR.
