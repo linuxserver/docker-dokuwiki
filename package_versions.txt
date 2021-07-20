@@ -102,6 +102,7 @@ php7-bz2-7.4.21-r0
 php7-common-7.4.21-r0
 php7-ctype-7.4.21-r0
 php7-curl-7.4.21-r0
+php7-dom-7.4.21-r0
 php7-fileinfo-7.4.21-r0
 php7-fpm-7.4.21-r0
 php7-gd-7.4.21-r0
