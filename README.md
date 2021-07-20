@@ -222,6 +222,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **20.07.21:** - Add php7-dom, fixes minor issues in sprintdoc template.
 * **15.04.21:** - Add `vendor` folder to deny list.
 * **21.02.21:** - Store search index outside of container, set absolute (default) path for `savedir`.
 * **23.01.21:** - Rebasing to alpine 3.13.
