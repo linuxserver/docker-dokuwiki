@@ -16,7 +16,7 @@ cairo-1.16.0-r2
 cairo-gobject-1.16.0-r2
 coreutils-8.32-r2
 cups-libs-2.3.3-r1
-curl-7.77.0-r1
+curl-7.78.0-r0
 dbus-libs-1.12.20-r1
 expat-2.2.10-r1
 fontconfig-2.13.1-r3
