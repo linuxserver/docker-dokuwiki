@@ -1,12 +1,12 @@
 ---
 
 # project information
-project_name: dokuwiki
-project_url: "https://www.dokuwiki.org/dokuwiki/"
-project_logo: "https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/dokuwiki-icon.png"
+project_name: Book Of Ichoronium
+project_url: "https://bookofichoronium.gameprofits.io"
+project_logo: "https://wiki.gameprofits.co/lib/exe/fetch.php?media=wiki:logo.png"
 project_blurb: |
   [{{ project_name|capitalize }}]({{ project_url }}) is a simple to use and highly versatile Open Source wiki software that doesn't require a database. It is loved by users for its clean and readable syntax. The ease of maintenance, backup and integration makes it an administrator's favorite. Built in access controls and authentication connectors make DokuWiki especially useful in the enterprise context and the large number of plugins contributed by its vibrant community allow for a broad range of use cases beyond a traditional wiki.
-project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_name }}"
+project_lsio_github_repo_url: "https://github.com/cyberfab007/bookofichoronium"
 
 # supported architectures
 available_architectures:
@@ -30,7 +30,7 @@ param_ports:
 # optional container parameters
 opt_param_usage_include_env: false
 opt_param_env_vars:
-  - { env_var: "APP_URL", env_value: "/dokuwiki", desc: "Specify an APP_URL to append to your root location, helpful for subfolder reverse proxy setups.  Does not take effect until after first restart following setup." }
+  - { env_var: "APP_URL", env_value: "/ichoronium", desc: "Specify an APP_URL to append to your root location, helpful for subfolder reverse proxy setups.  Does not take effect until after first restart following setup." }
 opt_param_usage_include_ports: true
 opt_param_ports:
     - { external_port: "443", internal_port: "443", port_desc: "#optional Application HTTPS Port" }
