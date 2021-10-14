@@ -1,0 +1,51 @@
+## Version 2022/08/20 - Changelog: https://github.com/linuxserver/docker-dokuwiki/commits/master/root/defaults/nginx/site-confs/default.conf.sample
+
+server {
+    listen 80 default_server;
+    listen [::]:80 default_server;
+
+    listen 443 ssl http2;
+    listen [::]:443 ssl http2;
+
+    server_name _;
+
+    root /app/www/public;
+    index doku.php;
+
+    location ~ /(conf/|bin/|inc/|vendor/) {
+        deny all;
+    }
+
+    #Support for X-Accel-Redirect
+    location ~ ^/data/ {
+        internal ;
+    }
+
+    location ~ ^/lib.*\.(js|css|gif|png|ico|jpg|jpeg)$ {
+        expires 365d;
+    }
+
+    location / {
+        try_files $uri $uri/ @dokuwiki;
+    }
+
+    location @dokuwiki {
+        # rewrites "doku.php/" out of the URLs if you set the userwrite setting to .htaccess in dokuwiki config page
+        rewrite ^/_media/(.*) /lib/exe/fetch.php?media=$1 last;
+        rewrite ^/_detail/(.*) /lib/exe/detail.php?media=$1 last;
+        rewrite ^/_export/([^/]+)/(.*) /doku.php?do=export_$1&id=$2 last;
+        rewrite ^/(.*) /doku.php?id=$1&$args last;
+    }
+
+    location ~ ^(.+\.php)(.*)$ {
+        fastcgi_split_path_info ^(.+\.php)(.*)$;
+        fastcgi_pass 127.0.0.1:9000;
+        fastcgi_index index.php;
+        include /etc/nginx/fastcgi_params;
+    }
+
+    # deny access to .htaccess/.htpasswd files
+    location ~ /\.ht {
+        deny all;
+    }
+}
