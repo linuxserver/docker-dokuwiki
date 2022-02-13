@@ -56,7 +56,7 @@ libltdl-2.4.6-r7
 libmagic-5.39-r0
 libmount-2.37.3-r0
 libpng-1.6.37-r1
-libpq-13.5-r0
+libpq-13.6-r0
 libproc-3.3.16-r0
 libressl3.1-libcrypto-3.1.5-r0
 libressl3.1-libssl-3.1.5-r0
@@ -68,7 +68,7 @@ libstdc++-10.2.1_pre1-r3
 libtasn1-4.16.0-r1
 libtls-standalone-2.9.1-r1
 libunistring-0.9.10-r0
-libuuid-2.36.1-r1
+libuuid-2.37.3-r0
 libwebp-1.1.0-r0
 libx11-1.7.1-r0
 libxau-1.0.9-r0
