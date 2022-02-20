@@ -37,7 +37,7 @@ jbig2dec-0.19-r0
 lcms2-2.11-r0
 libacl-2.2.53-r0
 libattr-2.4.48-r0
-libblkid-2.37.3-r0
+libblkid-2.37.4-r0
 libbsd-0.10.0-r0
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
@@ -54,7 +54,7 @@ libjpeg-turbo-2.1.0-r0
 libldap-2.4.57-r1
 libltdl-2.4.6-r7
 libmagic-5.39-r0
-libmount-2.37.3-r0
+libmount-2.37.4-r0
 libpng-1.6.37-r1
 libpq-13.6-r0
 libproc-3.3.16-r0
@@ -68,7 +68,7 @@ libstdc++-10.2.1_pre1-r3
 libtasn1-4.16.0-r1
 libtls-standalone-2.9.1-r1
 libunistring-0.9.10-r0
-libuuid-2.37.3-r0
+libuuid-2.37.4-r0
 libwebp-1.1.0-r0
 libx11-1.7.1-r0
 libxau-1.0.9-r0
