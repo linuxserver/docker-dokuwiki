@@ -18,7 +18,7 @@ coreutils-8.32-r2
 cups-libs-2.3.3-r1
 curl-7.79.1-r0
 dbus-libs-1.12.20-r1
-expat-2.2.10-r5
+expat-2.2.10-r6
 fontconfig-2.13.1-r3
 freetype-2.10.4-r1
 fribidi-1.0.10-r0
@@ -27,7 +27,7 @@ gdk-pixbuf-2.42.4-r0
 ghostscript-9.53.3-r1
 git-2.30.2-r0
 glib-2.66.8-r0
-gmp-6.2.1-r0
+gmp-6.2.1-r1
 gnutls-3.7.1-r0
 graphite2-1.3.14-r0
 harfbuzz-2.7.4-r1
