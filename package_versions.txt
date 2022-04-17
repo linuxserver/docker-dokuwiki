@@ -25,7 +25,7 @@ fribidi-1.0.10-r0
 gdbm-1.19-r0
 gdk-pixbuf-2.42.4-r0
 ghostscript-9.53.3-r1
-git-2.30.2-r0
+git-2.30.3-r0
 glib-2.66.8-r0
 gmp-6.2.1-r1
 gnutls-3.7.1-r0
@@ -139,6 +139,6 @@ tiff-4.2.0-r0
 tzdata-2022a-r0
 utmps-0.1.0.0-r0
 x265-libs-3.4-r0
-xz-5.2.5-r0
-xz-libs-5.2.5-r0
+xz-5.2.5-r1
+xz-libs-5.2.5-r1
 zlib-1.2.12-r0
