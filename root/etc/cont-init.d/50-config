@@ -50,6 +50,9 @@ done
 ## This is to make sure plugins that include files
 ## from CORE_DIR work properly
 for i in "${CORE_DIR[@]}"; do
+    if [[ -L /config/dokuwiki/"${i}" ]] && [[ $(readlink -f /config/dokuwiki/"${i}") != /app/www/public/"${i}" ]]; then
+        rm /config/dokuwiki/"${i}"
+    fi
     if [[ ! -L /config/dokuwiki/"${i}" ]]; then
         ln -s /app/www/public/"${i}" /config/dokuwiki/"${i}"
     fi
@@ -79,6 +82,9 @@ if [[ -f /config/dokuwiki/conf/local.php ]]; then
         echo "Set 'savedir' to absolute path in the container"
         echo "\$conf['savedir'] = '/app/www/public/data';" >> /config/dokuwiki/conf/local.php
     fi
+
+    # replace old app path
+    sed -i 's|/app/dokuwiki|/app/www/public|g' /config/dokuwiki/conf/local.php
 else
     echo "Go to http://IP-ADDRESS:PORT/install.php to configure your install then restart your container when finished to remove install.php"
 fi
