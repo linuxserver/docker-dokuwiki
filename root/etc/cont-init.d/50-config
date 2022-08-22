@@ -27,29 +27,32 @@ CORE_DIR=(\
 
 ## Move user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do
-    [[ ! -d /config/dokuwiki/${i} ]] && \
-        [[ -d /app/dokuwiki/"${i}" ]] && \
-        mv /app/dokuwiki/"${i}" /config/dokuwiki/"${i}"/
+    if [[ ! -d /config/dokuwiki/${i} ]] && [[ -d /app/www/public/"${i}" ]]; then
+        mv /app/www/public/"${i}" /config/dokuwiki/"${i}"/
+    fi
 done
 
 ## Remove user folders
 for i in "${USER_DIRECTORY[@]}"; do
-[[ -d /app/dokuwiki/"${i}" ]] && \
-    rm -rf /app/dokuwiki/"${i}"
+    if [[ -d /app/www/public/"${i}" ]]; then
+        rm -rf /app/www/public/"${i}"
+    fi
 done
 
 ## Make Symlinks
 for i in "${USER_DIRECTORY[@]}"; do
-[[ ! -L /app/dokuwiki/"${i}" ]] && \
-    ln -s /config/dokuwiki/"${i}" /app/dokuwiki/"${i}"
+    if [[ ! -L /app/www/public/"${i}" ]]; then
+        ln -s /config/dokuwiki/"${i}" /app/www/public/"${i}"
+    fi
 done
 
-## Make Symlinks from /app/dokuwiki to /config/dokuwiki
+## Make Symlinks from /app/www/public to /config/dokuwiki
 ## This is to make sure plugins that include files
 ## from CORE_DIR work properly
 for i in "${CORE_DIR[@]}"; do
-[[ ! -L /config/dokuwiki/"${i}" ]] && \
-    ln -s /app/dokuwiki/"${i}" /config/dokuwiki/"${i}"
+    if [[ ! -L /config/dokuwiki/"${i}" ]]; then
+        ln -s /app/www/public/"${i}" /config/dokuwiki/"${i}"
+    fi
 done
 
 ## TODO: Remove this following bit by 12/19/2020
@@ -58,30 +61,33 @@ sed -i "s/^upload_max_filesize = 100MB$//g" /config/php/php-local.ini
 sed -i "s/^post_max_size = 100MB$//g" /config/php/php-local.ini
 
 ## Bump php upload max filesize and post max size to 100MB by default
-grep -qF 'upload_max_filesize' /config/php/php-local.ini || echo 'upload_max_filesize = 100M' >> /config/php/php-local.ini
-grep -qF 'post_max_size' /config/php/php-local.ini || echo 'post_max_size = 100M' >> /config/php/php-local.ini
+if ! grep -qF 'upload_max_filesize' /config/php/php-local.ini; then
+    echo 'upload_max_filesize = 100M' >> /config/php/php-local.ini
+fi
+if ! grep -qF 'post_max_size' /config/php/php-local.ini; then
+    echo 'post_max_size = 100M' >> /config/php/php-local.ini
+fi
 
 ## Remove install.php once setup & enable pretty urls to work after setting .htaccess method in admin panel.
 if [[ -f /config/dokuwiki/conf/local.php ]]; then
-    rm -rf /app/dokuwiki/install.php && \
-    sed -i -e 's/#location/location/g' \
-        /config/nginx/site-confs/default && \
-    echo "Existing install found install.php not available"
+    if rm -rf /app/www/public/install.php; then
+        echo "Existing install found install.php not available"
+    fi
 
     # when default savedir stil active: change it to the path IN the container
     if ! grep -q "^\$conf\[\'savedir\'\]\s*\=" /config/dokuwiki/conf/local.php; then
         echo "Set 'savedir' to absolute path in the container"
-        echo "\$conf['savedir'] = '/app/dokuwiki/data';" >> /config/dokuwiki/conf/local.php
+        echo "\$conf['savedir'] = '/app/www/public/data';" >> /config/dokuwiki/conf/local.php
     fi
 else
     echo "Go to http://IP-ADDRESS:PORT/install.php to configure your install then restart your container when finished to remove install.php"
 fi
 
 ## Backwards compatibility 2021/04/15
-sed -i 's%location ~ /(conf/|bin/|inc/|install.php) { deny all; }%location ~ /(conf/|bin/|inc/|vendor/) { deny all; }%' /config/nginx/site-confs/default
+sed -i 's%location ~ /(conf/|bin/|inc/|install.php) { deny all; }%location ~ /(conf/|bin/|inc/|vendor/) { deny all; }%' /config/nginx/site-confs/default.conf
 
 # permissions
 echo "[cont-init.d] Setting permissions this may take some time"
 chown -R abc:abc \
-    /app/dokuwiki \
+    /app/www/public \
     /config
