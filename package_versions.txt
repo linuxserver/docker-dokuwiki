@@ -16,7 +16,7 @@ cairo-1.16.0-r5
 cairo-gobject-1.16.0-r5
 coreutils-9.0-r2
 cups-libs-2.3.3-r6
-curl-7.80.0-r3
+curl-7.80.0-r4
 dbus-libs-1.12.24-r0
 expat-2.5.0-r0
 fontconfig-2.13.1-r4
@@ -42,7 +42,7 @@ libbsd-0.11.3-r1
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
 libcrypto1.1-1.1.1q-r0
-libcurl-7.80.0-r3
+libcurl-7.80.0-r4
 libde265-1.0.8-r2
 libedit-20210910.3.1-r0
 libffi-3.4.2-r1
@@ -91,7 +91,7 @@ nettle-3.7.3-r0
 nghttp2-libs-1.46.0-r0
 nginx-1.20.2-r1
 oniguruma-6.9.7.1-r0
-openssl-1.1.1q-r0
+openssl-1.1.1s-r1
 p11-kit-0.24.0-r1
 pango-1.48.10-r0
 pcre-8.45-r1
@@ -121,7 +121,7 @@ php8-sqlite3-8.0.25-r0
 php8-xml-8.0.25-r0
 php8-xmlwriter-8.0.25-r0
 php8-zip-8.0.25-r0
-pixman-0.40.0-r3
+pixman-0.40.0-r4
 pkgconf-1.8.0-r0
 popt-1.18-r0
 procps-3.3.17-r0
