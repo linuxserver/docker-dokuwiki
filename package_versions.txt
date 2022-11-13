@@ -41,7 +41,7 @@ libblkid-2.37.4-r0
 libbsd-0.11.3-r1
 libbz2-1.0.8-r1
 libc-utils-0.7.2-r3
-libcrypto1.1-1.1.1q-r0
+libcrypto1.1-1.1.1s-r1
 libcurl-7.80.0-r4
 libde265-1.0.8-r2
 libedit-20210910.3.1-r0
@@ -63,7 +63,7 @@ libretls-3.3.4-r3
 librsvg-2.50.7-r1
 libsasl-2.1.28-r0
 libsm-1.2.3-r0
-libssl1.1-1.1.1q-r0
+libssl1.1-1.1.1s-r1
 libstdc++-10.3.1_git20211027-r0
 libtasn1-4.18.0-r0
 libunistring-0.9.10-r1
@@ -134,7 +134,7 @@ skalibs-2.11.0.0-r0
 sqlite-libs-3.36.0-r0
 ssl_client-1.34.1-r7
 tiff-4.4.0-r0
-tzdata-2022c-r0
+tzdata-2022f-r1
 utmps-0.1.0.3-r0
 x265-libs-3.5-r0
 xz-5.2.5-r1
