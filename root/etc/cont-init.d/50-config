@@ -21,14 +21,17 @@ CORE_DIR=(\
     )
 
 ## Make data directories
-[[ ! -d /config/dokuwiki/data ]]
+if [[ ! -d /config/dokuwiki/data ]]; then
     mkdir -p /config/dokuwiki/data
+fi
 
-[[ ! -d /config/dokuwiki/lib/ ]]
+if [[ ! -d /config/dokuwiki/lib/ ]]; then
     mkdir -p /config/dokuwiki/lib/
+fi
 
-[[ ! -d /config/dokuwiki/lib/images/ ]]
+if [[ ! -d /config/dokuwiki/lib/images/ ]]; then
     mkdir -p /config/dokuwiki/lib/images/
+fi
 
 ## Move user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do
