@@ -10,7 +10,9 @@ USER_DIRECTORY=(\
     "data/meta" \
     "data/pages" \
     "lib/plugins" \
-    "lib/tpl"
+    "lib/tpl" \
+    "lib/images/smileys/local" \
+    "lib/images/interwiki"
     )
 
 CORE_DIR=(\
@@ -24,6 +26,9 @@ CORE_DIR=(\
 
 [[ ! -d /config/dokuwiki/lib/ ]]
     mkdir -p /config/dokuwiki/lib/
+
+[[ ! -d /config/dokuwiki/lib/images/ ]]
+    mkdir -p /config/dokuwiki/lib/images/
 
 ## Move user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do

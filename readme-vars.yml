@@ -40,6 +40,7 @@ app_setup_block: |
   Upon first install go to `http://$IP:$PORT/install.php` once you have completed the setup, restart the container, login as admin and set "Use nice URLs" in the `admin/Configuration Settings` panel to `.htaccess` and tick `Use slash as namespace separator in URLs` to enable [nice URLs](https://www.dokuwiki.org/rewrite) you will find the webui at `http://$IP:$PORT/`, for more info see [{{ project_name|capitalize }}]({{ project_url }})
 # changelog
 changelogs:
+  - { date: "11.13.22:", desc: "Move lib/images/smileys/local and lib/images/interwiki outside of the container for user defined smiley and interwiki icon support." }
   - { date: "20.08.22:", desc: "Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base))." }
   - { date: "20.07.21:", desc: "Add php7-dom, fixes minor issues in sprintdoc template." }
   - { date: "15.04.21:", desc: "Add `vendor` folder to deny list." }
