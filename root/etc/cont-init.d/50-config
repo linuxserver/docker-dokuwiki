@@ -26,7 +26,7 @@ if [[ ! -d /config/dokuwiki/data ]]; then
 fi
 
 if [[ ! -d /config/dokuwiki/lib/images/smileys ]]; then
-    mkdir -p /config/dokuwiki/lib/images/smileys
+    mkdir -p /config/dokuwiki/lib/images/smileys/local
 fi
 
 ## Move user folders to persistent storage
