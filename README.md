@@ -224,6 +224,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **11.13.22:** - Move lib/images/smileys/local and lib/images/interwiki outside of the container for user defined smiley and interwiki icon support.
 * **20.08.22:** - Rebasing to alpine 3.15 with php8. Restructure nginx configs ([see changes announcement](https://info.linuxserver.io/issues/2022-08-20-nginx-base)).
 * **20.07.21:** - Add php7-dom, fixes minor issues in sprintdoc template.
 * **15.04.21:** - Add `vendor` folder to deny list.
