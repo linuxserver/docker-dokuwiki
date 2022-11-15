@@ -4,11 +4,13 @@ USER_DIRECTORY=(\
     "conf" \
     "data/attic" \
     "data/index" \
-    "data/media" \
     "data/media_attic" \
     "data/media_meta" \
+    "data/media" \
     "data/meta" \
     "data/pages" \
+    "lib/images/interwiki" \
+    "lib/images/smileys/local" \
     "lib/plugins" \
     "lib/tpl"
     )
@@ -19,11 +21,13 @@ CORE_DIR=(\
     )
 
 ## Make data directories
-[[ ! -d /config/dokuwiki/data ]]
+if [[ ! -d /config/dokuwiki/data ]]; then
     mkdir -p /config/dokuwiki/data
+fi
 
-[[ ! -d /config/dokuwiki/lib/ ]]
-    mkdir -p /config/dokuwiki/lib/
+if [[ ! -d /config/dokuwiki/lib/images/smileys ]]; then
+    mkdir -p /config/dokuwiki/lib/images/smileys/local
+fi
 
 ## Move user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do
