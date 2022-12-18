@@ -65,7 +65,7 @@ libsasl-2.1.28-r0
 libsm-1.2.3-r0
 libssl1.1-1.1.1s-r1
 libstdc++-10.3.1_git20211027-r0
-libtasn1-4.18.0-r0
+libtasn1-4.18.0-r1
 libunistring-0.9.10-r1
 libuuid-2.37.4-r0
 libwebp-1.2.2-r0
