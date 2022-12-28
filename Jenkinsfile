@@ -104,7 +104,7 @@ pipeline {
       steps{
         script{
           env.EXT_RELEASE = sh(
-            script: ''' docker run --rm alpine:3.9 sh -c 'apk add xmlstarlet > /dev/null 2>&1 && wget https://download.dokuwiki.org/rss -O - 2>/dev/null | xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | cut -d'-' -f2-4 | cut -d'.' -f1' ''',
+            script: ''' docker run --rm alpine:latest sh -c 'apk add xmlstarlet > /dev/null 2>&1 && wget https://download.dokuwiki.org/rss -O - 2>/dev/null | xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | cut -d'-' -f2-4 | cut -d'.' -f1' ''',
             returnStdout: true).trim()
             env.RELEASE_LINK = 'custom_command'
         }

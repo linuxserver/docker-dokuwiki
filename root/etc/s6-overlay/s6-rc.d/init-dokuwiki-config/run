@@ -1,4 +1,5 @@
 #!/usr/bin/with-contenv bash
+# shellcheck shell=bash
 
 USER_DIRECTORY=(\
     "conf" \
@@ -48,6 +49,7 @@ for i in "${USER_DIRECTORY[@]}"; do
     if [[ ! -L /app/www/public/"${i}" ]]; then
         ln -s /config/dokuwiki/"${i}" /app/www/public/"${i}"
     fi
+    lsiown abc:abc /config/dokuwiki/"${i}"
 done
 
 ## Make Symlinks from /app/www/public to /config/dokuwiki
@@ -60,12 +62,8 @@ for i in "${CORE_DIR[@]}"; do
     if [[ ! -L /config/dokuwiki/"${i}" ]]; then
         ln -s /app/www/public/"${i}" /config/dokuwiki/"${i}"
     fi
+    lsiown abc:abc /config/dokuwiki/"${i}"
 done
-
-## TODO: Remove this following bit by 12/19/2020
-# Remove erronously added configs post-init
-sed -i "s/^upload_max_filesize = 100MB$//g" /config/php/php-local.ini
-sed -i "s/^post_max_size = 100MB$//g" /config/php/php-local.ini
 
 ## Bump php upload max filesize and post max size to 100MB by default
 if ! grep -qF 'upload_max_filesize' /config/php/php-local.ini; then
@@ -97,7 +95,6 @@ fi
 sed -i 's%location ~ /(conf/|bin/|inc/|install.php) { deny all; }%location ~ /(conf/|bin/|inc/|vendor/) { deny all; }%' /config/nginx/site-confs/default.conf
 
 # permissions
-echo "[cont-init.d] Setting permissions this may take some time"
-chown -R abc:abc \
-    /app/www/public \
-    /config
+lsiown -R abc:abc \
+    /app/www/public/data \
+    /config/dokuwiki/lib

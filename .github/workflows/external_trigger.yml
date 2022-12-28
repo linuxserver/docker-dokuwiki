@@ -18,7 +18,7 @@ jobs:
           fi
           echo "**** External trigger running off of master branch. To disable this trigger, set a Github secret named \"PAUSE_EXTERNAL_TRIGGER_DOKUWIKI_MASTER\". ****"
           echo "**** Retrieving external version ****"
-          EXT_RELEASE=$(docker run --rm alpine:3.9 sh -c 'apk add xmlstarlet > /dev/null 2>&1 && wget https://download.dokuwiki.org/rss -O - 2>/dev/null | xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | cut -d'-' -f2-4 | cut -d'.' -f1')
+          EXT_RELEASE=$(docker run --rm alpine:latest sh -c 'apk add xmlstarlet > /dev/null 2>&1 && wget https://download.dokuwiki.org/rss -O - 2>/dev/null | xmlstarlet sel -T -t -v '/rss/channel/item[1]/link' | cut -d'-' -f2-4 | cut -d'.' -f1')
           if [ -z "${EXT_RELEASE}" ] || [ "${EXT_RELEASE}" == "null" ]; then
             echo "**** Can't retrieve external version, exiting ****"
             FAILURE_REASON="Can't retrieve external version for dokuwiki branch master"
