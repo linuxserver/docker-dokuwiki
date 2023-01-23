@@ -28,7 +28,6 @@ RUN \
     php81-pdo_sqlite \
     php81-pecl-imagick \
     php81-sqlite3 \
-    php81-xml \
     php81-zip && \
   echo "**** install dokuwiki ****" && \
   if [ -z ${DOKUWIKI_RELEASE+x} ]; then \
