@@ -5,7 +5,7 @@ alpine-release-3.17.1-r0
 aom-libs-3.5.0-r0
 apache2-utils-2.4.55-r0
 apk-tools-2.12.10-r1
-apr-1.7.0-r2
+apr-1.7.1-r0
 apr-util-1.6.1-r14
 argon2-libs-20190702-r2
 avahi-libs-0.8-r6
@@ -48,7 +48,7 @@ libc-utils-0.7.2-r3
 libcrypto3-3.0.7-r2
 libcurl-7.87.0-r1
 libdav1d-1.0.0-r2
-libde265-1.0.9-r0
+libde265-1.0.11-r0
 libedit-20221030.3.1-r0
 libexpat-2.5.0-r0
 libffi-3.4.4-r0
@@ -75,7 +75,7 @@ libtasn1-4.19.0-r0
 libunistring-1.1-r0
 libuuid-2.38.1-r1
 libwebp-1.2.4-r1
-libx11-1.8.3-r1
+libx11-1.8.4-r0
 libxau-1.0.10-r0
 libxcb-1.15-r0
 libxdmcp-1.1.4-r0
