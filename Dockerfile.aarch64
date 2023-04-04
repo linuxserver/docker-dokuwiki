@@ -37,7 +37,7 @@ RUN \
   fi && \
   curl -o \
   /tmp/dokuwiki.tar.gz -L \
-    "https://github.com/splitbrain/dokuwiki/archive/release_stable_${DOKUWIKI_RELEASE}.tar.gz" && \
+    "https://download.dokuwiki.org/src/dokuwiki/dokuwiki-${DOKUWIKI_RELEASE}.tgz" && \
   mkdir -p \
     /app/www/public && \
   tar xf \
