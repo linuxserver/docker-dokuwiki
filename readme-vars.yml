@@ -12,7 +12,6 @@ project_lsio_github_repo_url: "https://github.com/linuxserver/docker-{{ project_
 available_architectures:
   - { arch: "{{ arch_x86_64 }}", tag: "amd64-latest"}
   - { arch: "{{ arch_arm64 }}", tag: "arm64v8-latest"}
-  - { arch: "{{ arch_armhf }}", tag: "arm32v7-latest"}
 
 # container parameters
 common_param_env_vars_enabled: true
@@ -40,6 +39,7 @@ app_setup_block: |
   Upon first install go to `http://$IP:$PORT/install.php` once you have completed the setup, restart the container, login as admin and set "Use nice URLs" in the `admin/Configuration Settings` panel to `.htaccess` and tick `Use slash as namespace separator in URLs` to enable [nice URLs](https://www.dokuwiki.org/rewrite) you will find the webui at `http://$IP:$PORT/`, for more info see [{{ project_name|capitalize }}]({{ project_url }})
 # changelog
 changelogs:
+  - { date: "25.05.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
   - { date: "13.04.23:", desc: "Move ssl.conf include to default.conf." }
   - { date: "28.12.22:", desc: "Rebase to Alpine 3.17, migrate to s6v3." }
   - { date: "11.13.22:", desc: "Move lib/images/smileys/local and lib/images/interwiki outside of the container for user defined smiley and interwiki icon support." }
