@@ -21,7 +21,7 @@ ca-certificates-bundle              20230506-r0             apk
 cairo                               1.17.8-r1               apk           
 cairo-gobject                       1.17.8-r1               apk           
 coreutils                           9.3-r1                  apk           
-cups-libs                           2.4.4-r0                apk           
+cups-libs                           2.4.5-r0                apk           
 curl                                8.1.2-r0                apk           
 dbus-libs                           1.14.8-r0               apk           
 fontconfig                          2.14.2-r3               apk           
@@ -53,7 +53,7 @@ libc-utils                          0.7.2-r5                apk
 libcrypto3                          3.1.1-r1                apk           
 libcurl                             8.1.2-r0                apk           
 libdav1d                            1.2.1-r0                apk           
-libde265                            1.0.11-r2               apk           
+libde265                            1.0.12-r0               apk           
 libedit                             20221030.3.1-r1         apk           
 libexpat                            2.5.0-r1                apk           
 libffi                              3.4.4-r2                apk           
@@ -64,8 +64,8 @@ libhwy                              1.0.4-r1                apk
 libice                              1.1.1-r2                apk           
 libidn2                             2.3.4-r1                apk           
 libintl                             0.21.1-r7               apk           
-libjpeg-turbo                       2.1.5.1-r2              apk           
-libjxl                              0.8.1-r5                apk           
+libjpeg-turbo                       2.1.5.1-r3              apk           
+libjxl                              0.8.2-r0                apk           
 libldap                             2.6.4-r3                apk           
 libltdl                             2.4.7-r2                apk           
 libmd                               1.0.4-r2                apk           
@@ -84,7 +84,7 @@ libtasn1                            4.19.0-r1               apk
 libunistring                        1.1-r1                  apk           
 libuuid                             2.38.1-r8               apk           
 libwebp                             1.3.0-r2                apk           
-libx11                              1.8.4-r3                apk           
+libx11                              1.8.4-r4                apk           
 libxau                              1.0.11-r2               apk           
 libxcb                              1.15-r1                 apk           
 libxdmcp                            1.1.4-r2                apk           
@@ -159,7 +159,7 @@ splitbrain/php-jsstrip              1.0.1                   php-composer
 splitbrain/slika                    1.0.5                   php-composer  
 sqlite-libs                         3.41.2-r2               apk           
 ssl_client                          1.36.1-r0               apk           
-tiff                                4.5.0-r6                apk           
+tiff                                4.5.1-r0                apk           
 tzdata                              2023c-r1                apk           
 utmps-libs                          0.1.2.1-r1              apk           
 x265-libs                           3.5-r4                  apk           
