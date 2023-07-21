@@ -37,8 +37,8 @@ gmp                                 6.2.1-r3                apk
 gnutls                              3.8.0-r2                apk           
 graphite2                           1.3.14-r5               apk           
 harfbuzz                            7.3.0-r0                apk           
-imagemagick                         7.1.1.10-r0             apk           
-imagemagick-libs                    7.1.1.10-r0             apk           
+imagemagick                         7.1.1.13-r0             apk           
+imagemagick-libs                    7.1.1.13-r0             apk           
 jbig2dec                            0.19-r3                 apk           
 jq                                  1.6-r3                  apk           
 kissifrot/php-ixr                   1.8.3                   php-composer  
@@ -50,7 +50,7 @@ libblkid                            2.38.1-r8               apk
 libbsd                              0.11.7-r1               apk           
 libbz2                              1.0.8-r5                apk           
 libc-utils                          0.7.2-r5                apk           
-libcrypto3                          3.1.1-r1                apk           
+libcrypto3                          3.1.1-r3                apk           
 libcurl                             8.1.2-r0                apk           
 libdav1d                            1.2.1-r0                apk           
 libde265                            1.0.12-r0               apk           
@@ -74,11 +74,11 @@ libncursesw                         6.4_p20230506-r0        apk
 libpng                              1.6.39-r3               apk           
 libpq                               15.3-r0                 apk           
 libproc2                            4.0.3-r1                apk           
-libraw                              0.21.1-r0               apk           
-librsvg                             2.56.2-r0               apk           
+libraw                              0.21.1-r1               apk           
+librsvg                             2.56.3-r0               apk           
 libsasl                             2.1.28-r4               apk           
 libsm                               1.2.4-r1                apk           
-libssl3                             3.1.1-r1                apk           
+libssl3                             3.1.1-r3                apk           
 libstdc++                           12.2.1_git20220924-r10  apk           
 libtasn1                            4.19.0-r1               apk           
 libunistring                        1.1-r1                  apk           
@@ -109,7 +109,7 @@ nginx                               1.24.0-r6               apk
 numactl                             2.0.16-r4               apk           
 oniguruma                           6.9.8-r1                apk           
 openpsa/universalfeedcreator        v1.8.4.1                php-composer  
-openssl                             3.1.1-r1                apk           
+openssl                             3.1.1-r3                apk           
 p11-kit                             0.24.1-r2               apk           
 pango                               1.50.14-r1              apk           
 pcre                                8.45-r3                 apk           
