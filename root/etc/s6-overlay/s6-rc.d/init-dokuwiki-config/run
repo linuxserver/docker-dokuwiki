@@ -32,8 +32,15 @@ fi
 
 ## Move user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do
-    if [[ ! -d /config/dokuwiki/${i} ]] && [[ -d /app/www/public/"${i}" ]]; then
+    if [[ ! -d /config/dokuwiki/"${i}" ]] && [[ -d /app/www/public/"${i}" ]]; then
         mv /app/www/public/"${i}" /config/dokuwiki/"${i}"/
+    fi
+done
+
+# Update built-in plugins
+for i in /app/www/public/lib/plugins/*/; do
+    if [[ -d "/config/dokuwiki/lib/plugins/$(basename "${i}")" ]] && [[ -d "/app/www/public/lib/plugins/$(basename "${i}")" ]]; then
+        cp -R /app/www/public/lib/plugins/"$(basename "${i}")"/* /config/dokuwiki/lib/plugins/"$(basename "${i}")"
     fi
 done
 
@@ -76,12 +83,11 @@ fi
 ## Remove install.php once setup & enable pretty urls to work after setting .htaccess method in admin panel.
 if [[ -f /config/dokuwiki/conf/local.php ]]; then
     if rm -rf /app/www/public/install.php; then
-        echo "Existing install found install.php not available"
+        echo "Existing install found, deleting install.php."
     fi
 
     # when default savedir stil active: change it to the path IN the container
     if ! grep -q "^\$conf\[\'savedir\'\]\s*\=" /config/dokuwiki/conf/local.php; then
-        echo "Set 'savedir' to absolute path in the container"
         echo "\$conf['savedir'] = '/app/www/public/data';" >> /config/dokuwiki/conf/local.php
     fi
 

@@ -225,6 +225,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **21.07.23:** - Update built-in plugins on container update.
 * **25.05.23:** - Rebase to Alpine 3.18, deprecate armhf.
 * **13.04.23:** - Move ssl.conf include to default.conf.
 * **28.12.22:** - Rebase to Alpine 3.17, migrate to s6v3.
