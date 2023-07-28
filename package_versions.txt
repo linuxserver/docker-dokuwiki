@@ -22,7 +22,7 @@ cairo                               1.17.8-r1               apk
 cairo-gobject                       1.17.8-r1               apk           
 coreutils                           9.3-r1                  apk           
 cups-libs                           2.4.6-r0                apk           
-curl                                8.1.2-r0                apk           
+curl                                8.2.0-r1                apk           
 dbus-libs                           1.14.8-r0               apk           
 fontconfig                          2.14.2-r3               apk           
 freetype                            2.13.0-r5               apk           
@@ -51,7 +51,7 @@ libbsd                              0.11.7-r1               apk
 libbz2                              1.0.8-r5                apk           
 libc-utils                          0.7.2-r5                apk           
 libcrypto3                          3.1.1-r3                apk           
-libcurl                             8.1.2-r0                apk           
+libcurl                             8.2.0-r1                apk           
 libdav1d                            1.2.1-r0                apk           
 libde265                            1.0.12-r0               apk           
 libedit                             20221030.3.1-r1         apk           
@@ -104,7 +104,7 @@ nano                                7.2-r1                  apk
 ncurses-terminfo-base               6.4_p20230506-r0        apk           
 netcat-openbsd                      1.219-r1                apk           
 nettle                              3.8.1-r2                apk           
-nghttp2-libs                        1.53.0-r0               apk           
+nghttp2-libs                        1.55.1-r0               apk           
 nginx                               1.24.0-r6               apk           
 numactl                             2.0.16-r4               apk           
 oniguruma                           6.9.8-r1                apk           
