@@ -19,6 +19,7 @@ ca-certificates                     20230506-r0             apk
 ca-certificates-bundle              20230506-r0             apk           
 cairo                               1.17.8-r1               apk           
 cairo-gobject                       1.17.8-r1               apk           
+composer                            2.6.6                   binary        
 coreutils                           9.3-r1                  apk           
 cups-libs                           2.4.7-r0                apk           
 curl                                8.5.0-r0                apk           
