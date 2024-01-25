@@ -21,7 +21,7 @@ param_env_vars:
   - { env_var: "TZ", env_value: "Europe/London", desc: "Specify a timezone to use EG Europe/London." }
 param_usage_include_vols: true
 param_volumes:
-  - { vol_path: "/config", vol_host_path: "/path/to/appdata/config", desc: "Configuration files." }
+  - { vol_path: "/config", vol_host_path: "/path/to/{{ project_name }}/config", desc: "Persistent config files" }
 param_usage_include_ports: true
 param_ports:
   - { external_port: "80", internal_port: "80", port_desc: "Application HTTP Port" }
@@ -39,6 +39,7 @@ app_setup_block: |
   Upon first install go to `http://$IP:$PORT/install.php` once you have completed the setup, restart the container, login as admin and set "Use nice URLs" in the `admin/Configuration Settings` panel to `.htaccess` and tick `Use slash as namespace separator in URLs` to enable [nice URLs](https://www.dokuwiki.org/rewrite) you will find the webui at `http://$IP:$PORT/`, for more info see [{{ project_name|capitalize }}]({{ project_url }})
 # changelog
 changelogs:
+  - { date: "23.01.24:", desc: "Rebase to Alpine 3.19 with php 8.3."}
   - { date: "25.12.23:", desc: "Existing users should update: site-confs/default.conf - Cleanup default site conf." }
   - { date: "21.07.23:", desc: "Update built-in plugins on container update." }
   - { date: "25.05.23:", desc: "Rebase to Alpine 3.18, deprecate armhf." }
