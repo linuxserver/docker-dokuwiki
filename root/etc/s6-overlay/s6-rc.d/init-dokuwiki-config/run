@@ -39,7 +39,7 @@ done
 
 # Update built-in plugins
 for i in /app/www/public/lib/plugins/*/; do
-    if [[ -d "/config/dokuwiki/lib/plugins/$(basename "${i}")" ]] && [[ -d "/app/www/public/lib/plugins/$(basename "${i}")" ]]; then
+    if [[ -d "/config/dokuwiki/lib/plugins/$(basename "${i}")" ]] && [[ -d "/app/www/public/lib/plugins/$(basename "${i}")" ]] && [[ ! -L "/app/www/public/lib/plugins" ]]; then
         cp -R /app/www/public/lib/plugins/"$(basename "${i}")"/* /config/dokuwiki/lib/plugins/"$(basename "${i}")"
     fi
 done
