@@ -103,4 +103,5 @@ sed -i 's%location ~ /(conf/|bin/|inc/|install.php) { deny all; }%location ~ /(c
 # permissions
 lsiown -R abc:abc \
     /app/www/public/data \
+    /app/www/public/inc/lang \
     /config/dokuwiki/lib
