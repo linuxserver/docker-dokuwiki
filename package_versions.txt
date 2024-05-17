@@ -30,11 +30,11 @@ fontconfig                          2.14.2-r4              apk
 freetype                            2.13.2-r0              apk             
 gdbm                                1.23-r1                apk             
 geshi/geshi                         dev-master             php-composer    
-git                                 2.43.0-r0              apk             
-imagemagick                         7.1.1.26-r0            apk             
-imagemagick-jpeg                    7.1.1.26-r0            apk             
-imagemagick-libs                    7.1.1.26-r0            apk             
-imagemagick-webp                    7.1.1.26-r0            apk             
+git                                 2.43.4-r0              apk             
+imagemagick                         7.1.1.32-r0            apk             
+imagemagick-jpeg                    7.1.1.32-r0            apk             
+imagemagick-libs                    7.1.1.32-r0            apk             
+imagemagick-webp                    7.1.1.32-r0            apk             
 jq                                  1.7.1-r0               apk             
 kissifrot/php-ixr                   1.8.4                  php-composer    
 lcms2                               2.15-r4                apk             
@@ -60,7 +60,7 @@ libltdl                             2.4.7-r3               apk
 libmd                               1.1.0-r0               apk             
 libncursesw                         6.4_p20231125-r0       apk             
 libpng                              1.6.40-r0              apk             
-libpq                               16.2-r1                apk             
+libpq                               16.3-r0                apk             
 libproc2                            4.0.4-r0               apk             
 libsasl                             2.1.28-r5              apk             
 libsharpyuv                         1.3.2-r0               apk             
