@@ -13,8 +13,8 @@ argon2-libs                         20190702-r5           apk
 aziraphale/email-address-validator  2.0.1                 php-composer    
 bash                                5.2.37-r0             apk             
 brotli-libs                         1.1.0-r2              apk             
-busybox                             1.37.0-r18            apk             
-busybox-binsh                       1.37.0-r18            apk             
+busybox                             1.37.0-r19            apk             
+busybox-binsh                       1.37.0-r19            apk             
 c-ares                              1.34.5-r0             apk             
 ca-certificates                     20250619-r0           apk             
 ca-certificates-bundle              20250619-r0           apk             
@@ -118,7 +118,7 @@ php84-pdo                           8.4.11-r0             apk
 php84-pdo_mysql                     8.4.11-r0             apk             
 php84-pdo_pgsql                     8.4.11-r0             apk             
 php84-pdo_sqlite                    8.4.11-r0             apk             
-php84-pecl-imagick                  3.8.0-r0              apk             
+php84-pecl-imagick                  3.8.0-r1              apk             
 php84-phar                          8.4.11-r0             apk             
 php84-session                       8.4.11-r0             apk             
 php84-simplexml                     8.4.11-r0             apk             
@@ -140,7 +140,7 @@ splitbrain/php-cli                  1.3.4                 php-composer
 splitbrain/php-jsstrip              1.0.1                 php-composer    
 splitbrain/slika                    1.0.7                 php-composer    
 sqlite-libs                         3.49.2-r1             apk             
-ssl_client                          1.37.0-r18            apk             
+ssl_client                          1.37.0-r19            apk             
 tzdata                              2025b-r0              apk             
 utmps-libs                          0.1.3.1-r0            apk             
 xz-libs                             5.8.1-r0              apk             
