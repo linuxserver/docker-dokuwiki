@@ -33,10 +33,10 @@ gdbm                                1.24-r0               apk
 geshi/geshi                         dev-master            php-composer    
 git                                 2.49.1-r0             apk             
 git-init-template                   2.49.1-r0             apk             
-imagemagick                         7.1.2.8-r0            apk             
-imagemagick-jpeg                    7.1.2.8-r0            apk             
-imagemagick-libs                    7.1.2.8-r0            apk             
-imagemagick-webp                    7.1.2.8-r0            apk             
+imagemagick                         7.1.2.15-r0           apk             
+imagemagick-jpeg                    7.1.2.15-r0           apk             
+imagemagick-libs                    7.1.2.15-r0           apk             
+imagemagick-webp                    7.1.2.15-r0           apk             
 jq                                  1.8.1-r0              apk             
 kissifrot/php-ixr                   1.8.5                 php-composer    
 lcms2                               2.16-r0               apk             
