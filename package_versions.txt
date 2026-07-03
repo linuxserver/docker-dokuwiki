@@ -19,7 +19,7 @@ c-ares                              1.34.6-r0             apk
 ca-certificates                     20260413-r0           apk             
 ca-certificates-bundle              20260413-r0           apk             
 catatonit                           0.2.1-r0              apk             
-composer                            2.10.1                binary          
+composer                            2.10.2                binary          
 coreutils                           9.7-r1                apk             
 coreutils-env                       9.7-r1                apk             
 coreutils-fmt                       9.7-r1                apk             
@@ -49,7 +49,7 @@ libcrypto3                          3.5.7-r0              apk
 libcurl                             8.14.1-r2             apk             
 libdav1d                            1.5.1-r0              apk             
 libedit                             20250104.3.1-r1       apk             
-libexpat                            2.8.1-r0              apk             
+libexpat                            2.8.2-r0              apk             
 libgcc                              14.2.0-r6             apk             
 libgomp                             14.2.0-r6             apk             
 libice                              1.1.2-r0              apk             
