@@ -1,6 +1,6 @@
 # syntax=docker/dockerfile:1
 
-FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm64v8-3.22
+FROM ghcr.io/linuxserver/baseimage-alpine-nginx:arm64v8-3.24
 
 # set version label
 ARG BUILD_DATE
@@ -16,15 +16,16 @@ RUN \
   echo "**** install runtime packages ****" && \
   apk add --no-cache \
     imagemagick \
-    php84-bz2 \
-    php84-dom \
-    php84-gd \
-    php84-ldap \
-    php84-pdo_mysql \
-    php84-pdo_pgsql \
-    php84-pdo_sqlite \
-    php84-pecl-imagick \
-    php84-sqlite3 && \
+    php85-bz2 \
+    php85-dom \
+    php85-gd \
+    php85-ldap \
+    php85-pdo_mysql \
+    php85-pdo_pgsql \
+    php85-pdo_sqlite \
+    php85-pecl-imagick \
+    php85-sqlite3 \
+    php85-tokenizer && \
   echo "**** install dokuwiki ****" && \
   if [ -z ${DOKUWIKI_RELEASE+x} ]; then \
     DOKUWIKI_RELEASE=$(wget https://download.dokuwiki.org/rss -O - 2>/dev/null | \
