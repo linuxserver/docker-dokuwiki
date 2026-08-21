@@ -55,7 +55,7 @@ libcurl                             8.21.0-r0          apk
 libdav1d                            1.5.3-r0           apk             
 libeconf                            0.8.3-r0           apk             
 libedit                             20260508.3.1-r1    apk             
-libexpat                            2.8.2-r0           apk             
+libexpat                            2.8.3-r0           apk             
 libffi                              3.5.2-r1           apk             
 libgcc                              15.2.0-r5          apk             
 libgomp                             15.2.0-r5          apk             
@@ -69,7 +69,7 @@ libmd                               1.2.0-r0           apk
 libmount                            2.42.1-r0          apk             
 libncursesw                         6.6_p20260516-r0   apk             
 libpng                              1.6.58-r1          apk             
-libpq                               18.4-r0            apk             
+libpq                               18.6-r0            apk             
 libproc2                            4.0.6-r0           apk             
 libpsl                              0.21.5-r3          apk             
 libraqm                             0.10.2-r0          apk             
