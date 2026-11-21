@@ -30,10 +30,11 @@ if [[ ! -d /config/dokuwiki/lib/images/smileys ]]; then
     mkdir -p /config/dokuwiki/lib/images/smileys/local
 fi
 
-## Move user folders to persistent storage
+## Sync user folders to persistent storage
 for i in "${USER_DIRECTORY[@]}"; do
-    if [[ ! -d /config/dokuwiki/"${i}" ]] && [[ -d /app/www/public/"${i}" ]]; then
-        mv /app/www/public/"${i}" /config/dokuwiki/"${i}"/
+    if [[ -d /app/www/public/"${i}" ]]; then
+        mkdir -p /config/dokuwiki/"${i}"
+        cp -a /app/www/public/"${i}" /config/dokuwiki/
     fi
 done
 
