@@ -19,7 +19,7 @@ c-ares                              1.34.9-r0          apk
 ca-certificates                     20261020-r0        apk             
 ca-certificates-bundle              20261020-r0        apk             
 catatonit                           0.2.1-r0           apk             
-composer                            2.11.2             binary          
+composer                            2.11.3             binary          
 coreutils                           9.11-r0            apk             
 coreutils-env                       9.11-r0            apk             
 coreutils-fmt                       9.11-r0            apk             
@@ -34,7 +34,7 @@ gdbm                                1.26-r0            apk
 geshi/geshi                         dev-master         php-composer    
 git                                 2.54.1-r0          apk             
 git-init-template                   2.54.1-r0          apk             
-glib                                2.88.1-r1          apk             
+glib                                2.88.4-r0          apk             
 graphite2                           1.3.14-r6          apk             
 harfbuzz                            13.2.1-r0          apk             
 imagemagick                         7.1.2.35-r0        apk             
@@ -55,8 +55,8 @@ libcurl                             8.23.0-r0          apk
 libdav1d                            1.5.3-r0           apk             
 libeconf                            0.8.3-r0           apk             
 libedit                             20260508.3.1-r1    apk             
-libexpat                            2.10.0-r0          apk             
-libffi                              3.5.2-r1           apk             
+libexpat                            2.11.0-r0          apk             
+libffi                              3.8.2-r0           apk             
 libgcc                              15.2.0-r5          apk             
 libgomp                             15.2.0-r5          apk             
 libice                              1.1.2-r0           apk             
@@ -88,7 +88,7 @@ libxau                              1.0.12-r0          apk
 libxcb                              1.17.0-r2          apk             
 libxdmcp                            1.1.5-r1           apk             
 libxext                             1.3.7-r0           apk             
-libxml2                             2.13.9-r2          apk             
+libxml2                             2.13.9-r5          apk             
 libxpm                              3.5.20-r0          apk             
 libxt                               1.3.1-r0           apk             
 libyuv                              0.0.1928-r0        apk             
@@ -101,7 +101,7 @@ nano                                9.3-r0             apk
 ncurses-terminfo-base               6.6_p20260516-r0   apk             
 netcat-openbsd                      1.234.1-r0         apk             
 nghttp2-libs                        1.70.0-r0          apk             
-nginx                               1.30.7-r0          apk             
+nginx                               1.30.8-r0          apk             
 oniguruma                           6.9.10-r0          apk             
 openpsa/universalfeedcreator        v1.9.0             php-composer    
 openssl                             3.5.9-r1           apk             
